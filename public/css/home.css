@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap");
+img {
+    width: 100%;
+    /* background-size: cover; */
+}
+
+.text-description {
+    width: 870px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    font-family: Courier;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}

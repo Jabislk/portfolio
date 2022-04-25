@@ -1,42 +1,50 @@
-<header>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="{{path('app_home')}}">DARKCAPTIONSS</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<header id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{path('app_home')}}">DARKCAPTIONSS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="{{path('app_about')}}">About</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{path('app_project')}}">Projects</a>
-					</li>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{path('app_contact')}}">Contact</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="{{path('app_about')}}">About</a>
+                    </li>
+
+
+
+
+
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('app_project')}}">Projects</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('app_contact')}}">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Menu
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-						{% if not app.user %}
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% if not app.user %}
 
-							<li>
-								<a class="dropdown-item" href="">Inscription</a>
-							</li>
-							<li>
-								<a class="dropdown-item" href="">Connexion</a>
-							</li>
+                            <li>
+                                <a class="dropdown-item" href="">Inscription</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="">Connexion</a>
+                            </li>
 
-						{% else %}
-							<li>
-								<a class="dropdown-item" href=">deconnexion</a>
+                            {% else %}
+                            <li>
+                                <a class="dropdown-item" href=">deconnexion</a>
 							</li>
 							<li>
-								<a class="dropdown-item" href="">Mon compte</a>
+								<a class=" dropdown-item " href=" ">Mon compte</a>
 							</li>
 						{% endif %}
 					</ul>

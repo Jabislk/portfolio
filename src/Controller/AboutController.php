@@ -14,7 +14,7 @@ class AboutController extends AbstractController
     {
 
         $about = new About();
-        $about->setTitle('Jabinesh')
+        $about->setTitle('VIJAYARAJAH Jabinesh')
             ->setDescription('lorem ipsum')
             ->setImage('75');
 

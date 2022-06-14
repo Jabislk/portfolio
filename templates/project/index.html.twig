@@ -1,16 +1,23 @@
-{% extends 'base.html.twig' %} {% block title %}Hello ProjectController! {% endblock %} {% block body %} sec
-<section class="container">
-    <div class="card col-4">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un nouveau projet{% endblock %}
+
+{% block body %}
+{% if is_granted ("ROLE_ADMIN")  %}
+<section>
+    <div class="container">
+        <div class="row pt-5">
+            <h2 class="text-center">Add new Project</h2>
+
+            <div class="col md-12 mx-auto">
+                {{form(addForm)}}
+            </div>
         </div>
     </div>
 </section>
+{% endif %}
+{% if not is_granted('ROLE_MANAGER') %}
 
-
-
-
+{% endif %}
 {% endblock %}
+    

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %} {% block title %}Tous les Projets{% endblock %}
+{% block body %}
+
+<h1 class="mt-5 mb-5 comp">Liste des Projets</h1>
+<div class="containerprj">
+  <div class="row">
+    {% for projets in projets %}
+
+    <div class="col-md-4 d-flex align-items-stretch">
+      <div class="card mt-4 shadow p-3">
+        <img
+          class="card-img-top"
+          src="{{asset('upload/img/' ~ projets.img)}}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title1">{{ projets.titre }}</h5>
+          <p class="card-text1">{{ projets.github}}
+          </p>
+          <div class="text-center mt-auto">
+            <a href="#" class="btn btn-outline-primary">Go somewhere</a>
+            {% if is_granted ("ROLE_ADMIN") %}
+
+            <a href="{{ path('app_delete_project', { id: projets.id }) }}"
+              class="btn btn-outline-danger" >   Supprimer  </a><br/>
+            {% endif %} 
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

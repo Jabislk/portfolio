@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %} 
+
+{% block title %}Messagerie{% endblock %} 
+
+{% block body %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+
+          <th scope="col">Nom</th>
+          <th scope="col">Prenom</th>
+          <th scope="col">Email</th>
+          <th scope="col">Message</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for message in message %}
+        <tr>
+          <td scop="row">{{ message.id }}</td>
+          <td>{{ message.nom }}</td>
+          <td>{{ message.prenom }}</td>
+          <td>{{ message.mail }}</td>
+          <td>{{ message.message }}</td>
+
+          <td>
+            <a 
+              class="btn btn-danger" 
+              href="{{ path('app_delete_message',{id: message.id}) }}" 
+              onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce message ?')"
+              >Delete</a
+            >
+          </td> 
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}

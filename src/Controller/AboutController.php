@@ -14,8 +14,8 @@ class AboutController extends AbstractController
     {
 
         $about = new About();
-        $about->setTitle('VIJAYARAJAH Jabinesh')
-            ->setDescription('lorem ipsum')
+        $about->setTitle('')
+            ->setDescription('My name is Jabinesh. I’m 22 years old. I’m currently student at LePoles as a web developer junior. My hobbies are photography and cycling. I’m passionate about technology. ')
             ->setImage('75');
 
         return $this->render('about/index.html.twig', [

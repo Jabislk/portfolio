@@ -24,7 +24,7 @@ class ProjectType extends AbstractType
                 ]
             ])
             ->add('github', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('envoyer', SubmitType::class, ['attr' => ['class' => 'btn mt-3']]);
+            ->add('envoyer', SubmitType::class, ['attr' => ['class' => 'btn btn-primary mt-3']]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

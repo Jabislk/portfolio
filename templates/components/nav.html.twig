@@ -1,14 +1,18 @@
 <header id="header">
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-		<div class="container-fluid nvcenter">
-			<a class="navbar-brand" href="{{path('app_home')}}">DARKCAPTIONSS</a>
+	<nav class="navbar navbar-expand-lg navbar-dark ">
+		<div class="container-fluid ">
+			<a class="navbar-brand text-dark" href="{{path('app_home')}}">DARKCAPTIONSS</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse " id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+				<ul class="navbar-nav nvlight nvcenter">
 					<li class="nav-item">
 						<a class="nav-link " aria-current="page" href="{{path('app_about')}}">About</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="{{path('app_all_skill')}}">Skills</a>
 					</li>
 
 
@@ -21,15 +25,13 @@
 				</li>
 				 {%  if is_granted('ROLE_ADMIN') %}
                     <div class="dropdown mr-3">
-                        <button class="btn btn-dark dropdown-toggle buttonbg" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            ADMIN
-                        </button>
+                        <button class="btn dropdown-toggle buttonbg" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Admin</button>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{path('app_logout')}}">deconexion</a></li>
-                            <li><a class="dropdown-item" href="{{path('app_project')}}">ajouter projet</a></li>
-                            <li><a class="dropdown-item" href="">ajouter competance</a></li>
-                            <li><a class="dropdown-item" href="">ajouter une experiance</a></li>
-                            <li><a class="dropdown-item" href="">messagerie</a></li>
+                            <li><a class="dropdown-item text-danger" href="{{path('app_logout')}}">logout</a></li>
+                            <li><a class="dropdown-item" href="{{path('app_project')}}">Add Projects</a></li>
+                            <li><a class="dropdown-item" href="{{path('app_skill')}}">Add Skils</a></li>
+                            <li><a class="dropdown-item" href="">Add Experience </a></li>
+                            <li><a class="dropdown-item" href="{{path('app_all_message')}}">Messages</a></li>
                         </ul>
                 {% endif %}
 

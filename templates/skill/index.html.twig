@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Skills!{% endblock %}
+
+{% block body %}
+    <div class="container ">
+        <div class="row">
+            <h2 class="mt-5 mb-5 comp text-center">ADD NEW SKILS</h2>
+
+            <div class="col md-12 mx-auto">
+                {{form(skillForm)}}
+            </div>
+        </div>
+    </div>
+{% endblock %}

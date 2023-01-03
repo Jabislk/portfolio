@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un projet{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <h1 class="text-center">Editer Project</h1>
+        <div class="col-md-6 mx-auto">
+             {{form(formEditProjet)}}
+        </div>
+    </div>
+{% endblock %}

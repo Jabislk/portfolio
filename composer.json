@@ -40,8 +40,10 @@
         "symfony/validator": "6.0.*",
         "symfony/web-link": "6.0.*",
         "symfony/yaml": "6.0.*",
+        "symfony/apache-pack": "*",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
+        
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",

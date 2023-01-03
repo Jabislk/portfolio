@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{projet.titre}}{% endblock %}
+
+{% block body %}
+
+<br>
+
+<h1 class="text-center">{{projet.titre}}</h1>
+
+<br>
+
+    <div class="card">
+        <img class="soloCard" style="width: 150; height: 50rem " src="{{asset('upload/img/' ~ projet.img)}}" alt="Image"/>
+    </div>
+
+    <br>
+{% endblock %}

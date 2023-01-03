@@ -63,6 +63,8 @@ class ProjectController extends AbstractController
             'projets'=> $projet,
         ]);
     }
+
+    // DELETE
         
     #[Route('/app/admin/delete/project/{id}', name: 'app_delete_project')]
     public function admindelete(Project $projet): Response{
@@ -70,6 +72,58 @@ class ProjectController extends AbstractController
         $this->manager->flush();
     
         return $this->redirectToRoute('app_all_project');
+    }
+
+        // SINGLE PROJET
+    #[Route('/solo/project/{id}', name: 'app_solo_project')]
+    public function solo(Project $id): Response{
+        $projet = $this->manager->getRepository(Project::class)->find($id);
+
+        return $this->render('project/soloProject.html.twig', [
+
+            'projet' => $projet,
+
+        ]);
+    }
+
+    // ---------- EDIT ----------
+    /**
+     * @Route("admin/edit/projet/{id}", name="app_project_edit")
+     */
+    public function projetEdit(Project $project, Request $request, SluggerInterface $slugger): Response
+    {
+        $form = $this->createForm(ProjectType::class, $project);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $imageProjet = $form->get('img')->getData();
+
+            if($imageProjet){
+                $originalFilename = pathinfo($imageProjet->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '-' . $imageProjet->guessExtension();
+
+                try{
+                    $imageProjet->move(
+                        $this->getParameter('img'),
+                        $newFilename
+                    );
+                }catch(FileException $e){
+                    
+                }
+                $project->setImg($newFilename);
+            }else{
+                dd('Aucune image');
+            };
+
+            $this->manager->persist($project);
+            $this->manager->flush();
+            return $this->redirectToRoute('app_all_project');
+        };
+
+        return $this->render("project/editProject.html.twig", [
+            'formEditProjet' => $form->createView(),
+        ]);
     }
         
 }
